@@ -54,4 +54,13 @@ We will evaluate you on your ability to solve the problem defined in the require
 If you have any questions regarding requirements, do not hesitate to email your contact at theScore for clarification.
 
 ### Installation and running this solution
-... TODO
+To access this web app you can simply open it on `https://ericribeiro.github.io/nfl-rushing/`. 
+
+Alternatively, to run it in your machine, execute the following command lines:
+
+```
+git clone git@github.com:EricRibeiro/nfl-rushing.git
+npx http-server nfl-rushing
+```
+
+Open in your browser the URL provided in the section `"Available on"`.
