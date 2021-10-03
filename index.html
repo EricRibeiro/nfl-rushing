@@ -9,10 +9,15 @@
   <meta name="description" content="A simple HTML5 page to show a table of players.">
   <meta name="author" content="Eric Ribeiro">
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="css/styles.css?v=1.0">
 </head>
 
 <body>
+  <input type="text" placeholder="Search.." name="search">
+  <button id="search" type="submit"><i class="fa fa-search"></i></button>
+  <button id="export" type="submit"><i class="fa fa-file-csv"></i></button>
+  <table></table>
   <script type="module" src="scripts/script.js"></script>
 </body>
 </html>

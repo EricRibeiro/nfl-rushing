@@ -1,5 +1,3 @@
-import { sortByKey } from './utils.js'
-
 export function createTableRows(players) {
   const tableRows = players.reduce((acc, curr) => {
     const toCell = (cells, cellValue) => cells + `<td>${cellValue}</td>`;
@@ -43,9 +41,14 @@ export function addHeaderClickListener(headers, searchParams) {
 }
 
 function sortTable(key, searchParams) {
-  // There aren't any sorting criteria
-  if (searchParams.sortBy !== key) 
-    window.location.href = `${window.location.origin}?sortBy=${key}&order=desc&search=${searchParams.search}`;
-  else 
-    window.location.href = `${window.location.origin}?sortBy=${key}&order=${searchParams.nextOrder}&search=${searchParams.search}`;
+  // if the user is clicking in the same header
+  // just change from desc to asc or vice-versa
+  const sortUrl = (searchParams.sortBy !== key)
+    ? `${window.location.origin}?sortBy=${encodeURIComponent(key)}&order=desc`
+    : `${window.location.origin}?sortBy=${encodeURIComponent(key)}&order=${searchParams.nextOrder}`
+
+  if (searchParams.search)
+    window.location.href = `${sortUrl}&search=${searchParams.search}`;
+  else
+    window.location.href = sortUrl;
 }
