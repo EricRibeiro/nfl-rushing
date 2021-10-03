@@ -3,15 +3,11 @@ import {
 } from './utils.js'
 
 export function addExportClickListener(button, data) {
-  button.addEventListener("click", (e) => {
-    exportCsv(data);
-  })
+  button.addEventListener("click", (e) => exportCsv(data))
 }
 
 function exportCsv(data) {
   const csv = convertToCSV(data);
-  console.log(data)
-  console.log(csv)
 
   // download portion extracted from here: https://stackoverflow.com/a/24922761
   const filename = "players.csv";

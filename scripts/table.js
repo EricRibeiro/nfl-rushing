@@ -44,8 +44,8 @@ function sortTable(key, searchParams) {
   // if the user is clicking in the same header
   // just change from desc to asc or vice-versa
   const sortUrl = (searchParams.sortBy !== key)
-    ? `${window.location.origin}?sortBy=${encodeURIComponent(key)}&order=desc`
-    : `${window.location.origin}?sortBy=${encodeURIComponent(key)}&order=${searchParams.nextOrder}`
+    ? `${window.location.origin}${window.location.pathname}?sortBy=${encodeURIComponent(key)}&order=desc`
+    : `${window.location.origin}${window.location.pathname}?sortBy=${encodeURIComponent(key)}&order=${searchParams.nextOrder}`
 
   if (searchParams.search)
     window.location.href = `${sortUrl}&search=${searchParams.search}`;

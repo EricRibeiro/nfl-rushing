@@ -17,10 +17,10 @@ export function addInputKeypressListener(input, searchParams) {
 function search(searchValue, searchParams) {
   if (!searchParams.sortBy || !searchParams.currOrder) {
     window.location.href = 
-    `${window.location.origin}?search=${searchValue}`;
+    `${window.location.origin}${window.location.pathname}?search=${searchValue}`;
 
   } else {
      window.location.href = 
-    `${window.location.origin}?sortBy=${searchParams.sortBy}&order=${searchParams.currOrder}&search=${searchValue}`;
+    `${window.location.origin}${window.location.pathname}?sortBy=${searchParams.sortBy}&order=${searchParams.currOrder}&search=${searchValue}`;
   }
 }
